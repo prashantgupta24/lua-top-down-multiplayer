@@ -6,7 +6,7 @@ local zombie = require "zombie"
 local player = require "player"
 
 function love.load()
-    love.window.setMode(800, 600)
+    love.window.setFullscreen(true)
     GameClient = game.newClient(22122)
     love.window.setTitle( "Client")
 
