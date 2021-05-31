@@ -41,5 +41,7 @@ end
 function love.keypressed( key )
     if key == "space" then
        zombie.spawn(GameServer)
+    elseif key == "escape" then
+        love.event.quit()
     end
 end
