@@ -113,8 +113,14 @@ function love.draw()
         table.sort(sortedByScore, function(a, b) return a[2].score > b[2].score end)
         for _, v in pairs(sortedByScore) do
             local playerObj = v[2]
-            if playerObj.id == GameClient.player.id then love.graphics.setColor(0.2, 0.2, 0.8, 1) end
-            love.graphics.printf(playerObj.name .. " :: Zombies killed: " .. playerObj.score .. ", Accuracy: " .. string.format("%.2f %%",  playerObj.accuracy), Fonts.s ,20, love.graphics.getHeight()-height, love.graphics.getWidth(), "left")
+            local playerName = playerObj.name
+            if playerObj.id == GameClient.player.id then
+                love.graphics.setColor(0.2, 0.2, 0.8, 1)
+                playerName = playerName .. "*"
+            else
+                playerName = playerName .. " "
+            end
+            love.graphics.printf(playerName .. " :: Zombies killed: " .. playerObj.score .. ", Accuracy: " .. string.format("%.2f %%",  playerObj.accuracy), Fonts.s ,20, love.graphics.getHeight()-height, love.graphics.getWidth(), "left")
             love.graphics.setColor(0, 0, 0, 1)
             height = height - 30
         end
