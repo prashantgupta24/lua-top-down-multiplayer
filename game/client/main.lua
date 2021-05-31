@@ -113,7 +113,7 @@ function love.draw()
         table.sort(sortedByScore, function(a, b) return a[2].score > b[2].score end)
         for _, v in pairs(sortedByScore) do
             local playerObj = v[2]
-            if playerObj.id == GameClient.player.id then love.graphics.setColor(1, 0, 0, 1) end
+            if playerObj.id == GameClient.player.id then love.graphics.setColor(0.2, 0.2, 0.8, 1) end
             love.graphics.printf(playerObj.name .. " :: Zombies killed: " .. playerObj.score .. ", Accuracy: " .. string.format("%.2f %%",  playerObj.accuracy), Fonts.s ,20, love.graphics.getHeight()-height, love.graphics.getWidth(), "left")
             love.graphics.setColor(0, 0, 0, 1)
             height = height - 30
@@ -123,6 +123,7 @@ function love.draw()
     if GameClient.currentGameState == GameClient.states.SERVER_DISCONNECT then
         love.graphics.printf("Disconnected from server.. Game will close soon!", Fonts.l, 0, 50, love.graphics.getWidth(), "center")
     end
+    love.graphics.printf("Press escape to quit", Fonts.xs, 0, 5, love.graphics.getWidth(), "center")
 end
 
 function love.keypressed(key)
@@ -132,9 +133,13 @@ function love.keypressed(key)
                 timestamp = love.timer.getTime(),
             })
         else
-            GameClient:resetGame()
-            GameClient.currentGameState = GameClient.states.CLIENT_PLAY
+            if GameClient.currentGameState == GameClient.states.GAME_END then
+                GameClient:resetGame()
+                GameClient.currentGameState = GameClient.states.CLIENT_PLAY
+            end
         end
+    elseif key == "escape" then
+        love.event.quit()
     end
 end
 
@@ -145,8 +150,8 @@ function love.keyreleased(key)
 end
 
 function love.quit()
-  print("Thanks for playing!")
-  if GameClient.client then
-    GameClient.client:disconnectNow()
-  end
+    print("Thanks for playing!")
+    if GameClient.client then
+        GameClient.client:disconnectNow()
+    end
 end
