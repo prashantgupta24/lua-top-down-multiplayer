@@ -20,18 +20,18 @@ local function spawn(server)
     zombie.playerToTarget = playerToTarget
 
     local side = math.random(1, 4)
-    if side == 1 then
+    if side == 1 then --left
         zombie.x = -30
+        zombie.y = math.random(0, love.graphics.getHeight()) - 30
+    elseif side == 2 then --right
+        zombie.x = love.graphics.getWidth() + 30
         zombie.y = math.random(0, love.graphics.getHeight())
-    elseif side == 2 then
-        zombie.x = love.graphics.getWidth()
-        zombie.y = math.random(0, love.graphics.getHeight())
-    elseif side == 3 then
+    elseif side == 3 then --top
         zombie.x = math.random(0, love.graphics.getWidth())
         zombie.y = -30
-    elseif side == 4 then
+    elseif side == 4 then --down
         zombie.x = math.random(0, love.graphics.getWidth())
-        zombie.y = love.graphics.getHeight()
+        zombie.y = love.graphics.getHeight() + 30
     end
 
     table.insert(server.zombies, zombie)

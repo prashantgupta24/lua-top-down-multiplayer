@@ -5,7 +5,7 @@ local game = require "game"
 local zombie = require "zombie"
 
 function love.load()
-    love.window.setFullscreen(true)
+    love.window.setMode(1000, 600)
     love.window.setTitle("Server")
     GameServer = game.newServer(GetIP(), 22122)
 end
@@ -41,5 +41,7 @@ end
 function love.keypressed( key )
     if key == "space" then
        zombie.spawn(GameServer)
+    elseif key == "escape" then
+        love.event.quit()
     end
 end
