@@ -5,7 +5,6 @@ local game = require "game"
 local zombie = require "zombie"
 
 function love.load()
-    love.window.setFullscreen(true)
     love.window.setTitle("Server")
     GameServer = game.newServer(GetIP(), 22122)
 end
