@@ -44,9 +44,11 @@ local function move(server, bullet, collider, dt)
             local collision_data = server.bulletCollider[bullet.id]:getEnterCollisionData('zombie')
             local zombieHit = collision_data.collider:getObject()
             -- print('collision with : ', zombieHit.id)
-            local playerScore = server.players[bullet.playerID].score
-            server.players[bullet.playerID].score = playerScore + 1
-            zombieHit.dead = true
+            if zombieHit and not zombieHit.dead then
+                local playerScore = server.players[bullet.playerID].score
+                server.players[bullet.playerID].score = playerScore + 1
+                zombieHit.dead = true
+            end
             bullet.dead = true
         end
 
