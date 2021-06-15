@@ -4,18 +4,30 @@
 - Automatic local network searching for host server for multiplayer (using multicast)
 - Windfield for collision detection
 
-## Demo
-![](https://github.com/prashantgupta24/lua-top-down-multiplayer/blob/readme/demo.gif)
+## Prerequisites
 
-## Server
+- http://www.love2d.org/ - Download ans install Love2d.
+
+## Demo
+![](https://github.com/prashantgupta24/lua-top-down-multiplayer/blob/main/demo.gif)
+
+## How to play
+
+### Server
 
 Only required if you are planning to play in Multiplayer mode.
 
 Run `make server`
 
-## Game clients
+### Game clients
 
 Run `make client`
+
+## Prebuilt binaries
+
+See `Releases`. Run `Server` on any laptop connected to the same Wifi. Run `Clients` on any laptops connected to the same Wifi. All clients will automatically find the server and play in multi-player mode.
+
+**Note:** If a game is in session, the `Server` is not discoverable. It will automatically become discoverable once the game ends.
 
 ## Useful links
 
