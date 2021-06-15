@@ -1,7 +1,21 @@
 ## Multiplayer top down shooter
 
-- Automatic local network searching for multiplayer
+- Both single player and Multiplayer support. Play with your friends!
+- Automatic local network searching for host server for multiplayer (using multicast)
 - Windfield for collision detection
+
+## Demo
+![]()
+
+## Server
+
+Only required if you are planning to play in Multiplayer mode.
+
+Run `make server`
+
+## Game clients
+
+Run `make client`
 
 ## Useful links
 
