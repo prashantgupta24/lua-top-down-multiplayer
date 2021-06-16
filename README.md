@@ -1,12 +1,12 @@
 ## Multiplayer top down shooter
 
-- Both single player and Multiplayer support. Play with your friends!
+- Both single player and Multiplayer support. Play with your friends (on the same network)!
 - Automatic local network searching for host server for multiplayer (using multicast)
 - Windfield for collision detection
 
 ## Prerequisites
 
-- http://www.love2d.org/ - Download ans install Love2d.
+- http://www.love2d.org/ - Download and install Love2d.
 
 ## Demo
 ![](https://github.com/prashantgupta24/lua-top-down-multiplayer/blob/main/demo.gif)
