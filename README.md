@@ -13,17 +13,19 @@
 
 ## How to play
 
-### Server
+### 1. Build from source
+
+#### Server
 
 Only required if you are planning to play in Multiplayer mode.
 
 Run `make server`
 
-### Game clients
+#### Game clients
 
 Run `make client`
 
-## Prebuilt binaries
+### 2. Use the prebuilt binaries
 
 See `Releases`. Run `Server` on any laptop connected to the same Wifi. Run `Clients` on any laptops connected to the same Wifi. All clients will automatically find the server and play in multi-player mode.
 
