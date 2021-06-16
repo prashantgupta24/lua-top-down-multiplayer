@@ -9,6 +9,9 @@
 - http://www.love2d.org/ - Download and install Love2d.
 
 ## Demo
+
+2 people playing on the same laptop. More people can join this game on their laptop if they are connected to the same network!
+
 ![](https://github.com/prashantgupta24/lua-top-down-multiplayer/blob/main/demo.gif)
 
 ## How to play
